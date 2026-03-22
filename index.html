@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>小宝炸弹人</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Desktop hero -->
+    <header class="hero desktop-only">
+      <div>
+        <p class="eyebrow">Bomber Game</p>
+        <h1>小宝炸弹人</h1>
+        <p class="subtitle">放炸弹、炸砖块、躲敌人，经典炸弹人玩法！</p>
+      </div>
+      <div class="stats-card">
+        <div class="stat"><span>分数</span><strong id="score-d">0</strong></div>
+        <div class="stat"><span>关卡</span><strong id="level-d">1</strong></div>
+        <div class="stat"><span>生命</span><strong id="lives-d">3</strong></div>
+      </div>
+    </header>
+
+    <!-- Mobile compact header -->
+    <header class="mobile-bar mobile-only">
+      <span class="mobile-title">💣 炸弹人</span>
+      <div class="mobile-stats">
+        <div class="m-stat"><span>分数</span><strong id="score-m">0</strong></div>
+        <div class="m-stat"><span>关卡</span><strong id="level-m">1</strong></div>
+        <div class="m-stat"><span>❤️</span><strong id="lives-m">3</strong></div>
+      </div>
+      <div class="mobile-bar-right">
+        <button id="pause-btn-m" class="btn-icon">⏸</button>
+        <button id="restart-btn-m" class="btn-icon">🔄</button>
+      </div>
+    </header>
+
+    <main class="game-layout">
+      <section class="board-panel">
+        <!-- Desktop topbar -->
+        <div class="board-topbar desktop-only">
+          <div id="status" class="status-pill">点击开始游戏</div>
+          <div class="actions">
+            <button id="pause-btn" class="btn secondary">暂停</button>
+            <button id="restart-btn" class="btn primary">重新开始</button>
+          </div>
+        </div>
+
+        <!-- Power-ups display -->
+        <div class="powerups-bar">
+          <span class="pu" title="炸弹数">💣 <strong id="bomb-count">1</strong></span>
+          <span class="pu" title="爆炸范围">🔥 <strong id="bomb-range">1</strong></span>
+          <span class="pu" title="速度">⚡ <strong id="speed-level">1</strong></span>
+        </div>
+
+        <div class="board-stage">
+          <div class="board-wrap">
+            <canvas id="game" width="390" height="390" aria-label="炸弹人游戏画布"></canvas>
+            <div id="overlay" class="overlay visible">
+              <div class="overlay-card">
+                <h2 id="overlay-title">💣 炸弹人</h2>
+                <p id="overlay-text">方向键移动，空格放炸弹。<br>手机用下方按钮操作。<br>炸掉所有敌人过关！</p>
+                <button id="start-btn" class="btn primary large">开始游戏</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Touch controls -->
+        <div class="touch-controls-area">
+          <div class="touch-grid">
+            <div class="touch-row">
+              <button class="control-btn" data-action="up">↑</button>
+            </div>
+            <div class="touch-row">
+              <button class="control-btn" data-action="left">←</button>
+              <button class="control-btn bomb-btn" data-action="bomb">💣</button>
+              <button class="control-btn" data-action="right">→</button>
+            </div>
+            <div class="touch-row">
+              <button class="control-btn" data-action="down">↓</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="sidebar desktop-only">
+        <section class="panel info-panel">
+          <h3>玩法说明</h3>
+          <ul>
+            <li>方向键 / WASD 移动角色</li>
+            <li>空格键放置炸弹</li>
+            <li>炸弹 2 秒后爆炸，十字形火焰</li>
+            <li>炸掉砖块可能掉落道具</li>
+            <li>💣 增加炸弹数量</li>
+            <li>🔥 增大爆炸范围</li>
+            <li>⚡ 提升移动速度</li>
+            <li>消灭所有敌人即可过关</li>
+          </ul>
+        </section>
+      </aside>
+    </main>
+  </div>
+  <script src="./game.js"></script>
+</body>
+</html>
