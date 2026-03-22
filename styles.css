@@ -59,7 +59,7 @@ h1 { font-size: clamp(28px, 3.5vw, 44px); line-height: 1.05; }
 .panel { padding: 18px; background: linear-gradient(180deg, rgba(12,22,36,.88), rgba(8,16,28,.92)); border-radius: 24px; }
 .panel h3 { margin-top: 0; margin-bottom: 12px; font-size: 16px; }
 .panel ul { margin: 0; padding-left: 18px; color: var(--muted); line-height: 1.8; font-size: 14px; }
-.ctrl-area { display: none; } /* hidden on desktop */
+/* ctrl-area: hidden on desktop, shown on mobile via media query below */
 
 /* Tablet */
 @media (max-width: 920px) {
@@ -94,6 +94,7 @@ h1 { font-size: clamp(28px, 3.5vw, 44px); line-height: 1.05; }
 
   /* Control area: dpad left, bomb right */
   .ctrl-area {
+    display: flex !important;
     display: flex !important;
     align-items: center;
     justify-content: center;
