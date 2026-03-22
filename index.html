@@ -36,8 +36,8 @@
         <div class="m-stat"><span>🔥</span><strong id="bomb-range-m">1</strong></div>
       </div>
       <div class="mobile-bar-right">
-        <button id="pause-btn-m" class="btn-icon">⏸</button>
-        <button id="restart-btn-m" class="btn-icon">🔄</button>
+        <button id="pause-btn-m" class="btn-icon" type="button">⏸</button>
+        <button id="restart-btn-m" class="btn-icon" type="button">🔄</button>
       </div>
     </header>
 
@@ -52,35 +52,34 @@
             <span class="pu">⚡ <strong id="speed-level">1</strong></span>
           </div>
           <div class="actions">
-            <button id="pause-btn" class="btn secondary">暂停</button>
-            <button id="restart-btn" class="btn primary">重新开始</button>
+            <button id="pause-btn" class="btn secondary" type="button">暂停</button>
+            <button id="restart-btn" class="btn primary" type="button">重新开始</button>
           </div>
         </div>
 
         <!-- Game canvas -->
         <div class="board-stage">
           <div class="board-wrap">
-            <canvas id="game" width="390" height="390" aria-label="炸弹人游戏画布"></canvas>
+            <canvas id="game" width="390" height="390"></canvas>
             <div id="overlay" class="overlay visible">
               <div class="overlay-card">
                 <h2 id="overlay-title">💣 炸弹人</h2>
                 <p id="overlay-text">方向键移动，空格放炸弹。<br>手机用下方按钮操作。<br>炸掉所有敌人过关！</p>
-                <button id="start-btn" class="btn primary large">开始游戏</button>
+                <button id="start-btn" class="btn primary large" type="button">开始游戏</button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Mobile D-pad + Bomb -->
-        <div class="dpad-area mobile-only">
-          <div class="dpad">
-            <button class="d-btn d-up" data-action="up">▲</button>
-            <button class="d-btn d-left" data-action="left">◀</button>
-            <div class="d-center"></div>
-            <button class="d-btn d-right" data-action="right">▶</button>
-            <button class="d-btn d-down" data-action="down">▼</button>
+        <!-- Mobile controls: left=dpad, right=bomb -->
+        <div class="ctrl-area mobile-only">
+          <div class="dpad-wrap">
+            <button class="d-btn d-up" type="button">▲</button>
+            <button class="d-btn d-left" type="button">◀</button>
+            <button class="d-btn d-right" type="button">▶</button>
+            <button class="d-btn d-down" type="button">▼</button>
           </div>
-          <button class="bomb-fab" id="bomb-fab">💣</button>
+          <button class="bomb-fab" id="bomb-fab" type="button">💣</button>
         </div>
       </section>
 
@@ -94,19 +93,6 @@
             <li>炸砖块掉道具：💣🔥⚡</li>
             <li>消灭所有 👾 过关</li>
           </ul>
-        </section>
-
-        <section class="panel controls-panel">
-          <h3>触控操作</h3>
-          <div class="desktop-dpad">
-            <button class="control-btn" data-action="up">↑</button>
-            <div class="dpad-mid">
-              <button class="control-btn" data-action="left">←</button>
-              <button class="control-btn bomb-btn-d" data-action="bomb">💣</button>
-              <button class="control-btn" data-action="right">→</button>
-            </div>
-            <button class="control-btn" data-action="down">↓</button>
-          </div>
         </section>
       </aside>
     </main>
